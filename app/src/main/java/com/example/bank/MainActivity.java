@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mDatabaseHelper=new DatabaseHelper(this);
 
         btnAdd = findViewById(R.id.button);
         btnView = findViewById(R.id.button2);
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 newEntry = editText.getText().toString();
                 if (editText.length() != 0){
                     Log.d(TAG, "Entry : " + newEntry);
-                    AddData(newEntry);
+                    mDatabaseHelper.addData(new databaseHandler(1,newEntry));
                     editText.setText("");
                 }else{
                     toastMessage("Empty Field!");
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void AddData(String newEntry){
+   /* public void AddData(String newEntry){
 
         boolean insertData = mDatabaseHelper.addData(newEntry);
         Log.i(TAG,""+insertData);
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         }else{
             toastMessage("Something went wrong");
         }
-    }
+    }*/
     private void toastMessage(String message){
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }

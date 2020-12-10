@@ -1,0 +1,6 @@
+<root>
+    <item
+        name='android.database.sqlite.SQLiteOpenHelper SQLiteOpenHelper(android.content.Context, java.lang.String, CursorFactory, int) 0'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

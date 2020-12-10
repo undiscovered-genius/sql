@@ -44,13 +44,15 @@ public class ListDataActivity extends AppCompatActivity {
     private  void populateListView(){
         Log.d(TAG, "populateListView: Display data in the ListView.");
 
-        String str1, str2;
+        String str1, str2, str3, str4;
         Cursor data = mDatabaseHelper.getData();
         ArrayList<String> listData = new ArrayList<>();
         while(data.moveToNext()){
             str1 = data.getString(0);
             str2 = data.getString(1);
-            listData.add(str1+ ".  " + str2);
+            str3 = data.getString(2);
+            str4 = data.getString(3);
+            listData.add(str1 + " | " + str2 + " | " + str3 + " | " + str4);
         }
         ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
         mListView.setAdapter(adapter);

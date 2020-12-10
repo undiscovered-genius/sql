@@ -17,6 +17,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "people_table";
     private static final String COL1 = "ID";
     private  static  final String COL2 = "name";
+    private  static  final String COL3 = "email";
+    private  static  final String COL4 = "crn_bln";
 
     public DatabaseHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
@@ -25,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TABLE_NAME + " ("+COL1+" INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COL2 + " TEXT)";
+                COL2 + " TEXT, "+ COL3 + " TEXT, " + COL4 +" TEXT)";
         db.execSQL(createTable);
     }
 
@@ -40,8 +42,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         //contentValues.put(COL1, handler.getId());
         contentValues.put(COL2,handler.getName());
+        contentValues.put(COL3,handler.getEmail());
+        contentValues.put(COL4,handler.getCrn_bln());
 
-        Log.d(TAG, "addData: Adding " + handler.getId()+" to " + TABLE_NAME);
+        Log.d(TAG, "addData: Adding " + handler.getId()+", "+ handler.getName()+", "+handler.getEmail()+", "+handler.getCrn_bln()+", "+" to " + TABLE_NAME);
          db.insert(TABLE_NAME,null,contentValues);
 
         db.close();

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.LogPrinter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mDatabaseHelper=new DatabaseHelper(this);
 
-        btnAdd = findViewById(R.id.button);
-        btnView = findViewById(R.id.button2);
+        btnAdd = findViewById(R.id.mainhome);
+        btnView = findViewById(R.id.transfer);
         editText = findViewById(R.id.name);
         emailid = findViewById(R.id.email);
         balance = findViewById(R.id.crn_bln);

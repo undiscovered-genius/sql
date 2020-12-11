@@ -1,10 +1,13 @@
 package com.example.bank;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -15,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.widget.AdapterView.*;
 
 public class ListDataActivity extends AppCompatActivity {
 
@@ -32,6 +37,31 @@ public class ListDataActivity extends AppCompatActivity {
         mDatabaseHelper = new DatabaseHelper(this);
 
         populateListView();
+
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Object itemClickListener =  parent.getItemAtPosition(position);
+
+                Intent intent = new Intent(ListDataActivity.this,transfer.class);
+                String str1, str2, str3, str4;
+                Cursor data = mDatabaseHelper.getData();
+                ArrayList<String> listData = new ArrayList<>();
+                data.moveToPosition(position);
+                    str1 = data.getString(0);
+                    str2 = data.getString(1);
+                    str3 = data.getString(2);
+                    str4 = data.getString(3);
+
+                intent.putExtra("str1",str1);
+                intent.putExtra("str2",str2);
+                intent.putExtra("str3",str3);
+                intent.putExtra("str4",str4);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 //    private  void populateListView(){
 //        Log.d(TAG, "populateListView: Display data in the ListView.");

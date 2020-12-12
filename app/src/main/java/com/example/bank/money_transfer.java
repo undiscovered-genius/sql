@@ -46,6 +46,9 @@ public class money_transfer extends AppCompatActivity {
 
         String bal = (String) getIntent().getExtras().get("bln");
         name.setText((String) getIntent().getExtras().get("nm"));
+//        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this,
+//                R.layout.support_simple_spinner_dropdown_item, R.layout.activity_money_transfer); //change the last argument here to your xml above.
+//        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
     }
 
@@ -55,6 +58,7 @@ public class money_transfer extends AppCompatActivity {
         String str2;
         Cursor data = mDatabaseHelper.getData();
         ArrayList<String> listData = new ArrayList<>();
+        listData.add("Select the Person");
         while(data.moveToNext()){
             str2 = data.getString(1);
             if (str2.equals((String) getIntent().getExtras().get("nm"))){
@@ -65,6 +69,7 @@ public class money_transfer extends AppCompatActivity {
         }
         ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
         spinner.setAdapter((SpinnerAdapter) adapter);
+
 
     }
 }

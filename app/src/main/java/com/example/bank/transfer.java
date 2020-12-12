@@ -6,11 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class transfer extends AppCompatActivity {
 
@@ -26,7 +22,7 @@ public class transfer extends AppCompatActivity {
         btnTransfer = findViewById(R.id.transfer);
         name = findViewById(R.id.name);
         emailid = findViewById(R.id.email);
-        balance = findViewById(R.id.crn_bln);
+        balance = findViewById(R.id.money);
 
         name.setText((String) getIntent().getExtras().get("str2"));
         emailid.setText((String) getIntent().getExtras().get("str3"));
@@ -44,7 +40,13 @@ public class transfer extends AppCompatActivity {
         btnTransfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(transfer.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                String  bln ,nm;
+                bln = balance.getText().toString();
+                nm = name.getText().toString();
+                Intent intent2 =  new Intent(transfer.this, money_transfer.class);
+                intent2.putExtra("nm", nm);
+                intent2.putExtra("bln", bln);
+                startActivity(intent2);
             }
         });
     }

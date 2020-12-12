@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btnView = findViewById(R.id.transfer);
         editText = findViewById(R.id.name);
         emailid = findViewById(R.id.email);
-        balance = findViewById(R.id.crn_bln);
+        balance = findViewById(R.id.money);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override

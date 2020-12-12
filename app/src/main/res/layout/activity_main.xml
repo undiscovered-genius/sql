@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crn_bln"
+        app:layout_constraintTop_toBottomOf="@+id/money"
         app:layout_constraintVertical_bias="0.3" />
 
     <Button
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crn_bln"
+        app:layout_constraintTop_toBottomOf="@+id/money"
         app:layout_constraintVertical_bias="0.3" />
 
     <EditText
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/crn_bln"
+        android:id="@+id/money"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"

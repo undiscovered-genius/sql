@@ -64,5 +64,10 @@ public class databaseHandler {
         this.crn_bln = String.valueOf(crn_bln);
     }
 
+    public databaseHandler (String name, String crn_bln){
+        this.name=String.valueOf(name);
+        this.crn_bln = String.valueOf(crn_bln);
+    }
+
 
 }

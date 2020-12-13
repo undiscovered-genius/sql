@@ -102,4 +102,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        // return contact list
         return contactList;
     }
+
+    // code to update the single contact
+    public int updateContact(databaseHandler handler) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COL4, handler.getCrn_bln());
+
+        // updating row
+        return db.update(TABLE_NAME, values, COL2 + " = ?",
+                new String[] { String.valueOf(handler.getName()) });
+    }
 }

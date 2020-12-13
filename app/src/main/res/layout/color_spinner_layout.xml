@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:textAlignment="center"
+    android:textColor="#FFFFFF"
+    android:textStyle="bold"
+    android:textSize="20sp"
+    android:text="Select the Person"
+    android:background="#6019DD">
+
+</CheckedTextView>

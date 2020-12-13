@@ -76,7 +76,7 @@
         android:background="#6019DD"
         android:ems="10"
         android:hint="AMOUNT to TRANSFER"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:padding="10dp"
         android:textAlignment="center"
         android:textColor="#F5FFFFFF"

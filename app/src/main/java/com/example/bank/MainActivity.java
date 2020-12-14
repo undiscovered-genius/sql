@@ -1,77 +1,48 @@
 package com.example.bank;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
+    List<String> titles;
+    List<Integer> images;
+    Adapter adapter;
 
-    private  static  final  String TAG = "MainActivity";
-
-    DatabaseHelper mDatabaseHelper;
-    private Button btnAdd, btnView;
-    private EditText editText, emailid, balance;
-    String newEntry = "";
-    String nemEmail = "";
-    String bal = "";
     //boolean insertData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mDatabaseHelper=new DatabaseHelper(this);
 
-        btnAdd = findViewById(R.id.mainhome);
-        btnView = findViewById(R.id.transfer);
-        editText = findViewById(R.id.name);
-        emailid = findViewById(R.id.email);
-        balance = findViewById(R.id.money);
+        recyclerView = findViewById(R.id.recycleView);
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                newEntry = editText.getText().toString();
-                nemEmail = emailid.getText().toString();
-                bal = balance.getText().toString();
-                if (editText.length() != 0){
-                    Log.d(TAG, "Entry : " + newEntry + ", " + nemEmail + ", " + bal);
-                    mDatabaseHelper.addData(new databaseHandler(1,newEntry,nemEmail,bal));
-                    editText.setText("");
-                    emailid.setText("");
-                    balance.setText("");
-                }else{
-                    toastMessage("Empty Field!");
-                }
-            }
-        });
+        titles = new ArrayList<>();
+        images = new ArrayList<>();
 
-        btnView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListDataActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
+        titles.add("ADD ACCOUNT");
+        titles.add("CUSTOMER DETAILS");
+        titles.add("TRANSFER MONEY");
 
-   /* public void AddData(String newEntry){
+        images.add(R.drawable.ic_baseline_person_add_24);
+        images.add(R.drawable.ic_baseline_account_balance_24);
+        images.add(R.drawable.ic_baseline_transfer_within_a_station_24);
 
-        boolean insertData = mDatabaseHelper.addData(newEntry);
-        Log.i(TAG,""+insertData);
+        adapter = new Adapter(this,titles,images);
 
-        if(insertData){
-            toastMessage("Data Inserted Successfully");
-        }else{
-            toastMessage("Something went wrong");
-        }
-    }*/
-    private void toastMessage(String message){
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1,GridLayoutManager.VERTICAL,false);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setAdapter((RecyclerView.Adapter) adapter);
     }
 }

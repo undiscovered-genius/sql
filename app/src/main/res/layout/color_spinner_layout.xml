@@ -2,12 +2,12 @@
 <CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="6dp"
+    android:padding="2dp"
     android:textAlignment="center"
     android:textColor="#FFFFFF"
     android:textStyle="bold"
-    android:textSize="20sp"
+    android:textSize="18sp"
     android:text="Select the Person"
-    android:background="#6019DD">
+    android:background="#8c123b">
 
 </CheckedTextView>

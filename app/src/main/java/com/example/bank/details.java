@@ -14,7 +14,7 @@ public class details extends AppCompatActivity {
     private  static  final  String TAG = "MainActivity";
 
     DatabaseHelper mDatabaseHelper;
-    private Button btnAdd, btnView;
+    private Button btnAdd;
     private EditText editText, emailid, balance;
     String newEntry = "";
     String nemEmail = "";
@@ -28,7 +28,6 @@ public class details extends AppCompatActivity {
         mDatabaseHelper=new DatabaseHelper(this);
 
         btnAdd = findViewById(R.id.mainhome);
-        btnView = findViewById(R.id.transfer);
         editText = findViewById(R.id.name);
         emailid = findViewById(R.id.email);
         balance = findViewById(R.id.money);
@@ -45,19 +44,16 @@ public class details extends AppCompatActivity {
                     editText.setText("");
                     emailid.setText("");
                     balance.setText("");
+                    Toast.makeText(details.this,"Account Created Successfully!",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(details.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 }else{
                     toastMessage("Empty Field!");
                 }
             }
         });
 
-        btnView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(details.this, ListDataActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     /* public void AddData(String newEntry){

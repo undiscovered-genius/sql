@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FF80AA"
+    android:background="#F14B6C"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -14,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#FF80AA"
+        android:background="#F14B6C"
         app:cardBackgroundColor="#fff"
         app:cardCornerRadius="35dp"
         app:cardElevation="10dp"

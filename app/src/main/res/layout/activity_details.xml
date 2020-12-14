@@ -16,25 +16,10 @@
         app:backgroundTint="#8c123b"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/money"
         app:layout_constraintVertical_bias="0.3" />
 
-    <Button
-        android:id="@+id/transfer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_corner"
-        android:text="View Table"
-        android:textStyle="bold"
-        app:backgroundTint="#8c123b"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/money"
-        app:layout_constraintVertical_bias="0.3" />
 
     <EditText
         android:id="@+id/name"

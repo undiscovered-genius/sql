@@ -84,7 +84,7 @@ public class ListDataActivity extends AppCompatActivity {
             str4 = data.getString(3);
             listData.add(str1 + " | " + str2 + " | " + str3 + " | " + str4);
         }
-        ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
+        ListAdapter adapter = new ArrayAdapter<>(this, R.layout.color_lsit_layout, listData);
         mListView.setAdapter(adapter);
     }
 

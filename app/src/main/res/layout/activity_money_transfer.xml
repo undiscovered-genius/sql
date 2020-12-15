@@ -30,7 +30,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#8c123b"
-        android:padding="10dp"
+        android:padding="8dp"
         android:text="Transfer  Money"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -111,7 +111,7 @@
 
     <Button
         android:id="@+id/transfer"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/button_corner"
